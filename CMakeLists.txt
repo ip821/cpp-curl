@@ -18,8 +18,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(curl)
 
 add_library(cpp_curl
+        include/cpp_curl/CurlConnection.h
         CurlConnection.cpp
-        CurlConnection.h
         CurlGlobalInit.h
         CurlHandle.h
         CurlSList.h
@@ -29,6 +29,6 @@ add_library(cpp_curl::cpp_curl ALIAS cpp_curl)
 target_compile_features(cpp_curl PUBLIC cxx_std_23)
 target_include_directories(cpp_curl
         PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 target_link_libraries(cpp_curl PRIVATE libcurl)
