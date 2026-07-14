@@ -1,6 +1,5 @@
 #pragma once
 #include <expected>
-#include "../../CurlHandle.h"
 
 struct Success
 {
@@ -22,6 +21,5 @@ public:
     ~CurlConnection() = default;
 
     [[nodiscard]] HttpResult HttpGet(const std::string& url, const std::optional<std::string>& authorizationHeaderValue) const;
-    static HttpResult CreateHttpResultFromCurlErrorCode(CURLcode rc, const std::string& responseBody);
     static std::string GetHttpStatusMessage(long code);
 };

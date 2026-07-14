@@ -2,6 +2,13 @@
 
 #include "include/cpp_curl/CurlConnection.h"
 #include "CurlSList.h"
+#include "../../../cmake-build-release/_deps/cpp-curl-src/CurlHandle.h"
+
+HttpResult CreateHttpResultFromCurlErrorCode(const CURLcode rc, const std::string& responseBody)
+{
+    const auto strError = std::string(curl_easy_strerror(rc));
+    return std::unexpected(Error{strError, responseBody});
+}
 
 HttpResult CurlConnection::HttpGet(const std::string& url, const std::optional<std::string>& authorizationHeaderValue) const
 {
@@ -50,12 +57,6 @@ HttpResult CurlConnection::HttpGet(const std::string& url, const std::optional<s
     }
 
     return Success{responseBody};
-}
-
-HttpResult CurlConnection::CreateHttpResultFromCurlErrorCode(const CURLcode rc, const std::string& responseBody)
-{
-    const auto strError = std::string(curl_easy_strerror(rc));
-    return std::unexpected(Error{strError, responseBody});
 }
 
 std::string CurlConnection::GetHttpStatusMessage(long code)
