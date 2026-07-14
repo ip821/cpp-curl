@@ -2,7 +2,7 @@
 #include <expected>
 #include <curl/curl.h>
 
-#include "CurlHandle.h"
+#include "../CurlHandle.h"
 
 struct Success
 {
