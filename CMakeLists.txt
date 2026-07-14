@@ -19,10 +19,10 @@ FetchContent_MakeAvailable(curl)
 
 add_library(cpp_curl
         include/cpp_curl/CurlConnection.h
-        CurlConnection.cpp
-        CurlGlobalInit.h
+        include/cpp_curl/CurlGlobalInit.h
         CurlHandle.h
         CurlSList.h
+        CurlConnection.cpp
         CurlGlobalInit.cpp
 )
 
