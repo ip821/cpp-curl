@@ -1,6 +1,6 @@
 #include <format>
 
-#include "include/CurlConnection.h"
+#include "include/cpp_curl/CurlConnection.h"
 #include "CurlSList.h"
 
 HttpResult CurlConnection::HttpGet(const std::string& url, const std::optional<std::string>& authorizationHeaderValue) const
