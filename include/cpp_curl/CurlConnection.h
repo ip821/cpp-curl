@@ -1,5 +1,7 @@
 #pragma once
 #include <expected>
+#include <string>
+#include <optional>
 
 struct Success
 {

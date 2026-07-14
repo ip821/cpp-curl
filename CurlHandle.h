@@ -12,6 +12,11 @@ public:
         m_pCurl = curl_easy_init();
     }
 
+    CurlHandle(const CurlHandle&) = delete;
+    CurlHandle& operator=(const CurlHandle&) = delete;
+    CurlHandle(CurlHandle&&) = delete;
+    CurlHandle& operator=(CurlHandle&&) = delete;
+
     ~CurlHandle()
     {
         if (m_pCurl)
