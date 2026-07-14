@@ -23,6 +23,7 @@ add_library(cpp_curl
         CurlGlobalInit.h
         CurlHandle.h
         CurlSList.h
+        CurlGlobalInit.cpp
 )
 
 add_library(cpp_curl::cpp_curl ALIAS cpp_curl)
