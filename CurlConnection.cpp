@@ -1,8 +1,8 @@
 #include <format>
 
 #include "include/cpp_curl/CurlConnection.h"
+#include "CurlHandle.h"
 #include "CurlSList.h"
-#include "../../../cmake-build-release/_deps/cpp-curl-src/CurlHandle.h"
 
 HttpResult CreateHttpResultFromCurlErrorCode(const CURLcode rc, const std::string& responseBody)
 {
